@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "6803e5add21002f9b03b2fea"
+  },
+  "nombre": "Harvin Acosta",
+  "correoElectronico": "harvin@example.com",
+  "contrasena": "miContraseñaSegura123",
+  "rol": "usuario",
+  "createdAt": {
+    "$date": "2025-04-19T18:04:29.219Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-19T18:04:29.219Z"
+  },
+  "__v": 0
+}]

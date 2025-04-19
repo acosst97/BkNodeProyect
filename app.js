@@ -6,6 +6,7 @@ app.use(express.json());
 const path = require("path");
 const uploadRoutes = require('./routes/uploadRoutes');
 const tareaRoutes = require('./routes/tareaRoutes');
+const usuarioRoutes = require('./routes/UsuarioRoutes')
 const fs = require('fs');
 
 async function conectarDB() {
@@ -17,7 +18,13 @@ async function conectarDB() {
     }
 } 
 conectarDB();
+// async function desconectar(){
 
+//     mongoose.connection.close(); // Cerrar la conexión
+//     console.log("desconectado");
+    
+// }
+// desconectar()
 
 // Servir archivos estáticos desde la carpeta 'uploads' (opcional, para acceder a las imágenes desde el navegador)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -26,4 +33,5 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/uploads', uploadRoutes);
 
 app.use('/api/tareas', tareaRoutes);
+app.use('/api/usuarios', usuarioRoutes)
 app.listen(port, () => console.log("API corriendo en el puerto " + port));

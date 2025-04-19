@@ -4,7 +4,7 @@ const path = require('path');
 // Crear una nueva tarea
 exports.crearTarea = async (req, res) => {
     try {
-        const nuevaTarea = new Tarea(req.body);
+        const nuevaTarea = new Tarea();
         const tareaGuardada = await nuevaTarea.save();
         res.status(201).json(tareaGuardada); // 201 Created
     } catch (error) {

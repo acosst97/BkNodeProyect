@@ -23,7 +23,7 @@ exports.subirArchivoATarea = async (req, res) => {
 
     } catch (error) {
         console.error('Error al subir y asociar el archivo:', error);
-        // Eliminar el archivo subido en caso de error en la base de datos
+       
         if (req.file) {
             const filePath = path.join(__dirname, '../uploads', req.file.filename);
             fs.unlinkSync(filePath);

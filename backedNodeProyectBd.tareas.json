@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "68032691300f09dca8eaccb6"
+  },
+  "titulo": "Comprar provisiones",
+  "descripcion": "Probando imagenes",
+  "completada": true,
+  "fechaVencimiento": {
+    "$date": "2025-04-21T10:00:00.000Z"
+  },
+  "prioridad": "alta",
+  "fechaCreacion": {
+    "$date": "2025-04-19T04:29:05.797Z"
+  },
+  "__v": 0,
+  "imagen": "uploads/1745040076783-1640151527844.jpg"
+},
+{
+  "_id": {
+    "$oid": "6803e17d3c12984163016459"
+  },
+  "titulo": "rise up",
+  "descripcion": "Nueva cancion electronica 2004",
+  "completada": false,
+  "fechaVencimiento": {
+    "$date": "2025-04-21T10:00:00.000Z"
+  },
+  "prioridad": "media",
+  "fechaCreacion": {
+    "$date": "2025-04-19T17:46:37.641Z"
+  },
+  "__v": 0,
+  "imagen": "uploads/1745086338931-elephant.png"
+}]
