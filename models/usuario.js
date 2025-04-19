@@ -21,7 +21,7 @@ const usuarioSchema = new mongoose.Schema({
         default: 'usuario' 
     }
 }, {
-    timestamps: true // agrega automáticamente los campos createdAt y updatedAt
+    timestamps: true //campos createdAt y updatedAt
 });
 
 const Usuario = mongoose.model('Usuario', usuarioSchema);

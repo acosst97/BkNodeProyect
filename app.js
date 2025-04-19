@@ -19,17 +19,15 @@ async function conectarDB() {
 } 
 conectarDB();
 // async function desconectar(){
-
 //     mongoose.connection.close(); // Cerrar la conexión
 //     console.log("desconectado");
-    
 // }
 // desconectar()
 
-// Servir archivos estáticos desde la carpeta 'uploads' (opcional, para acceder a las imágenes desde el navegador)
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Usar las rutas de subida de archivos
+// rutas subida de archivos
 app.use('/api/uploads', uploadRoutes);
 
 app.use('/api/tareas', tareaRoutes);

@@ -30,8 +30,7 @@ const tareaSchema = new mongoose.Schema({
     imagen: {
         type: String
     }
-    // Si decides crear un modelo Imagen:
-    // imagen: { type: mongoose.Schema.Types.ObjectId, ref: 'Imagen' }
+
 });
 
 const Tarea = mongoose.model('Tarea', tareaSchema);

@@ -1,12 +1,12 @@
 const Tarea = require('../models/tarea');
 const fs = require('fs').promises; 
 const path = require('path');
-// Crear una nueva tarea
+
 exports.crearTarea = async (req, res) => {
     try {
         const nuevaTarea = new Tarea();
         const tareaGuardada = await nuevaTarea.save();
-        res.status(201).json(tareaGuardada); // 201 Created
+        res.status(201).json(tareaGuardada); //  Created
     } catch (error) {
         res.status(500).json({ mensaje: 'Error al crear la tarea', error: error.message });
     }
@@ -65,14 +65,14 @@ exports.actualizarTarea = async (req, res) => {
 
         const tareaActualizada = await Tarea.findByIdAndUpdate(
             id,
-            { ...req.body, imagen: nuevaImagenRuta }, // Incluye la nueva ruta de la imagen
+            { ...req.body, imagen: nuevaImagenRuta }, 
             { new: true }
         );
 
         res.status(200).json(tareaActualizada);
 
     } catch (error) {
-        // Si hubo un error y se subió un archivo, intenta eliminarlo
+    
         if (req.file) {
             const filePath = path.join(__dirname, '../uploads', req.file.filename);
             try {
@@ -97,20 +97,19 @@ exports.eliminarTarea = async (req, res) => {
             return res.status(404).json({ mensaje: 'Tarea no encontrada' });
         }
 
-        // Si la tarea tenía una imagen asociada, la eliminamos del sistema de archivos
+    
         if (tarea.imagen) {
-            const imagePath = path.join(__dirname, '../', tarea.imagen); // Construye la ruta completa
+            const imagePath = path.join(__dirname, '../', tarea.imagen); //ruta completa
             try {
                 await fs.unlink(imagePath);
                 console.log(`Imagen eliminada: ${imagePath}`);
             } catch (error) {
                 console.error(`Error al eliminar la imagen ${imagePath}:`, error);
-                // No es crítico que la eliminación de la imagen falle,
-                // podríamos solo loguear el error y seguir con la eliminación de la tarea.
+
             }
         }
 
-        res.status(204).send(); // 204 No Content (eliminación exitosa)
+        res.status(204).send(); // 204 (eliminación exitosa)
 
     } catch (error) {
         res.status(500).json({ mensaje: 'Error al eliminar la tarea', error: error.message });
